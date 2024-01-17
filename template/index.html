@@ -1,0 +1,23 @@
+<!-- index.html -->
+{% extends 'navbar.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for bag in Bages %}
+            <div class="col-md-4 mt-3">
+                <div class="card">
+                    <img src="{{bag.image.url}}" class="card-img-top img-fluid" alt="{{ bag.name }}" width="500" height="500px" >
+                    <div class="card-body">
+                        <h5 class="card-title"><b>{{ bag.name }}</b></h5>
+                        <p class="card-text">{{ bag.color }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-warning" href="{% url 'bagcardapp:update' bag.id %}">Update</a>
+                        <a class="btn btn-danger" href="{% url 'bagcardapp:delete' bag.id %}">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

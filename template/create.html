@@ -1,0 +1,23 @@
+{% extends 'navbar.html' %}
+
+{% block body %}
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_name">Name</label>
+            <input type="text" class="form-control" id="id_name" name="name" >
+        </div>
+        <div class="form-group">
+            <label for="id_name">Image</label>
+            <input type="file" class="form-control" id="id_name" name="image" >
+        </div>
+        <div class="form-group">
+            <label for="id_name">Color</label>
+            <input type="text" class="form-control" id="id_name" name="color" >
+        </div>
+
+        <button type="submit" class="btn btn-">Submit</button>
+    </form>
+</div>
+{% endblock %}
